@@ -24,3 +24,32 @@ body {
     position: relative;
     margin: 20px auto;
 }
+.boton-color {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#rojo { background: #ff4d4d; grid-area: rojo; }
+#verde { background: #4dff4d; grid-area: verde; }
+#azul { background: #4d4dff; grid-area: azul; }
+#amarillo { background: #ffff4d; grid-area: amarillo; }
+
+.boton-color.activo {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgb(225, 10, 10);
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .boton-color {
+        width: 100px;
+        height: 100px;
+    }
+    .tablero-simon {
+        width: 220px;
+        height: 220px;
+    }
+}
