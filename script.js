@@ -16,3 +16,29 @@ document.getElementById("iniciarJuego").addEventListener("click", () => {
     reiniciarJuego();
     nuevaRonda();
     });
+
+function nuevaRonda() {
+        secuenciaJugador = [];
+        if (secuencia.length > 0) {
+        puntaje++;
+        }
+        document.getElementById("puntaje").textContent = puntaje;
+        let nuevoColor;
+        do {
+        nuevoColor = colores[Math.floor(Math.random() * colores.length)];
+        } while (nuevoColor === secuencia[secuencia.length - 1]);
+        secuencia.push(nuevoColor);
+        mostrarSecuencia();
+        }
+
+        
+function mostrarSecuencia() {
+            secuencia.forEach((color, index) => {
+            setTimeout(() => {
+            document.getElementById(color).classList.add("activo");
+            setTimeout(() => {
+            document.getElementById(color).classList.remove("activo");
+            }, 500);
+            }, (index + 1) * 1000);
+            });
+            }
