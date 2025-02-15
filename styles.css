@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #ab1111, #7edf06);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+}
+
+.tablero-simon {
+    width: 320px;
+    height: 300px;
+    border-radius: 50%;
+    display: grid;
+    grid-template-areas:
+        "rojo verde"
+        "amarillo azul";
+    gap: 5px;
+    position: relative;
+    margin: 20px auto;
+}
