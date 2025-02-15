@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Dice </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id = "menu">
+        <h1>Simon Dice</h1>
+        <input type="text" id="nombreJugador" placeholder="Ingresa tu nombre">
+        <button id="iniciarJuego">Iniciar Juego</button>
+        <h2>Victorias Acumuladas </h2>
+        <ul id="victoriasTotales"></ul>
+        <h2>Mejores Puntajes </h2>
+        <ul id="mejoresPuntajes"></ul>
+    </div>
+
+    <div id="juego" style="display: none;">
+        <h2>Jugador: <span id="nombreJugadorActual"></span></h2>
+        <h3>Puntaje: <span id="puntaje">0</span></h3>
+        <div class="tablero">
+            <div class = "boton-color" id="rojo" data-sonido ="" ></div>  
+            <div class = "boton-color" id="azul" data-sonido ="" ></div>
+            <div class = "boton-color" id="amarillo" data-sonido ="" ></div>
+            <div class = "boton-color" id="verde" data-sonido ="" ></div>
+        </div>
+        <button id="reiniciarJuego">Reiniciar Juego</button>
+    </div>
+    <script src = "script.js"></script> 
+</body>
+</html>
