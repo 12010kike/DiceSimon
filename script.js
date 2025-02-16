@@ -78,4 +78,36 @@ function juegoTerminado() {
     document.getElementById("juego").style.display = "none";
     document.getElementById("menu").style.display = "block";
 }
-      
+function guardarPuntaje() {
+    let mejoresPuntajes = JSON.parse(localStorage.getItem("mejoresPuntajes")) || [];
+    mejoresPuntajes.push({ nombre: nombreJugador, puntaje });
+    mejoresPuntajes.sort((a, b) => b.puntaje - a.puntaje);
+    localStorage.setItem("mejoresPuntajes", JSON.stringify(mejoresPuntajes.slice(0, 5)));
+    mostrarMejoresPuntajes();
+    
+}
+
+function mostrarMejoresPuntajes() {
+    const mejoresPuntajes = JSON.parse(localStorage.getItem("mejoresPuntajes")) || [];
+    const listaPuntajes = document.getElementById("mejoresPuntajes");
+    listaPuntajes.innerHTML = mejoresPuntajes
+        .map(puntaje => `<li>${puntaje.nombre}: ${puntaje.puntaje}</li>`)
+        .join('');
+}
+
+document.getElementById("reiniciarJuego").addEventListener("click", reiniciarJuego);
+
+function reiniciarJuego() {
+    puntaje = 0;
+    secuencia = [];
+    secuenciaJugador = [];
+    document.getElementById("puntaje").textContent = puntaje;
+    document.getElementById("juego").style.display = "block";
+}
+
+function reproducirSonido(color) {
+    const audio = new Audio(document.getElementById(color).dataset.sonido);
+    audio.play();
+}
+
+mostrarMejoresPuntajes();
